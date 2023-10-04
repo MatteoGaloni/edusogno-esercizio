@@ -25,7 +25,7 @@ $result = $conn->query($checkEmail);
 if ($result->num_rows > 0) {
     $eventi = $result->fetch_all();
 } else {
-    echo "L'utente non ha partecipato a eventi.";
+    $message = "L'utente non ha partecipato a eventi.";
 }
 
 ?>
@@ -52,17 +52,20 @@ if ($result->num_rows > 0) {
             <h1>Ciao <?php echo $user['nome'] ?> ecco i tuoi eventi</h1>
             <div class="container">
                 <div class="row">
-                    <?php foreach ($eventi as $evento) {  ?>
-                        <div class="col-4 justify-content-center">
-                            <div class="card">
-                                <div class="card-body">
-                                    <h5 class="card-title"><?php echo $evento[2] ?></h5>
-                                    <p class="card-text"><?php echo $evento[3] ?></p>
-                                    <a href="#" class="btn btn-primary">Join</a>
+                    <?php
+                    if (isset($eventi)) {
+                        foreach ($eventi as $evento) {  ?>
+                            <div class="col-4 justify-content-center">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h5 class="card-title"><?php echo $evento[2] ?></h5>
+                                        <p class="card-text"><?php echo $evento[3] ?></p>
+                                        <a href="#" class="btn btn-primary">Join</a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    <?php } ?>
+                    <?php }
+                    } ?>
                 </div>
             </div>
         </div>

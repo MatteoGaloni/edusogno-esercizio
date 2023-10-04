@@ -89,7 +89,7 @@ $conn->close();
                     </form>
                 </div>
                 <div class="card-footer">
-                    <p class="text-muted">Non sei ancora registrato? <a href="register.php">Registrati qui</a></p>
+                    <p class="text-muted">Non sei ancora registrato? <a href="registration.php">Registrati qui</a></p>
                 </div>
             </div>
         </div>
