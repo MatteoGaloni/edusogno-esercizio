@@ -50,10 +50,10 @@ if ($result->num_rows > 0) {
     <main>
         <div id="main-container">
             <h1>Ciao <?php echo $user['nome'] ?> ecco i tuoi eventi</h1>
-            <div class="container" style=" width: 18rem">
+            <div class="container">
                 <div class="row">
-                    <div class="col">
-                        <?php foreach ($eventi as $evento) {  ?>
+                    <?php foreach ($eventi as $evento) {  ?>
+                        <div class="col-4 justify-content-center">
                             <div class="card">
                                 <div class="card-body">
                                     <h5 class="card-title"><?php echo $evento[2] ?></h5>
@@ -61,8 +61,8 @@ if ($result->num_rows > 0) {
                                     <a href="#" class="btn btn-primary">Join</a>
                                 </div>
                             </div>
-                        <?php } ?>
-                    </div>
+                        </div>
+                    <?php } ?>
                 </div>
             </div>
         </div>

@@ -85,7 +85,7 @@ $conn->close();
                             <label for="password">Password:</label>
                             <input type="password" class="form-control" id="password" name="password" required>
                         </div>
-                        <button type="submit" class="btn btn-primary">Login</button>
+                        <button type="submit" class="btn btn-primary mt-2">Login</button>
                     </form>
                 </div>
                 <div class="card-footer">
