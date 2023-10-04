@@ -23,8 +23,7 @@ $checkEmail = "SELECT * FROM eventi WHERE attendees LIKE '%$userEmail%'";
 $result = $conn->query($checkEmail);
 
 if ($result->num_rows > 0) {
-    $eventi = $result->fetch_assoc();
-    var_dump($eventi);
+    $eventi = $result->fetch_all();
 } else {
     echo "L'utente non ha partecipato a eventi.";
 }
@@ -54,26 +53,18 @@ if ($result->num_rows > 0) {
             <div class="container" style=" width: 18rem">
                 <div class="row">
                     <div class="col">
-                        <div class="card">
-                            <h5 class="card-header">Featured</h5>
-                            <div class="card-body">
-                                <h5 class="card-title">Special title treatment</h5>
-                                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                        <?php foreach ($eventi as $evento) {  ?>
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title"><?php echo $evento[2] ?></h5>
+                                    <p class="card-text"><?php echo $evento[3] ?></p>
+                                    <a href="#" class="btn btn-primary">Join</a>
+                                </div>
                             </div>
-                        </div>
+                        <?php } ?>
                     </div>
                 </div>
             </div>
-        </div>
-
-
-
-
-        </div>
-
-        </div>
-
         </div>
     </main>
 </body>
